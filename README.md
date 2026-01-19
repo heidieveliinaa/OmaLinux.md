@@ -60,7 +60,7 @@ Loin uuden virtuaalikoneen seuraavin parametrein:
 * Debian käynnistyi onnistuneesti.
 * XFCE-työpöytäympäristö toimi ilman ongelmia.
 
-![Asennusvaihe](Nayttokuva 2026-01-19 115133.png)
+![Asennusvaihe](<Nayttokuva 2026-01-19 115133.png>)
 ---
 
 ## k) Vapaaehtoinen bonus: suosikkiohjelmani Linuxilla
