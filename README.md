@@ -1,83 +1,83 @@
-# OmaLinux.md
-Homework reports for Linux course taught by Tero Karvinen
-# h0 Kurssi ja tekijä
+# Raportti: Debian Linuxin asennus virtuaalikoneeseen
 
-**Kurssi:** Linux-palvelimet
-**Tekijä:** (oma nimi)
-**Päivämäärä:** (pp.kk.vvvv)
+**Kurssi:** Linux-palvelimet - ICI003AS2A-3016  
+**Tekijä:** Heidi Immonen  
+**Päivämäärä:** 18.1.2026  
+**Paikka:** Kotilaboratorio, Windows 11 -kone
 
 ---
 
-# h1 Oma Linux
-
-## x) Lue ja tiivistä
-
-### Raportin kirjoittaminen
-
-* Raportin tulee olla täsmällinen ja toistettava: toinen henkilö pystyy tekemään samat vaiheet samalla tavalla.
-* Ympäristö (host OS, rauta, ohjelmistoversiot) on kuvattava selkeästi.
-* Virhetilanteet ja niiden ratkaisut tulee dokumentoida huolellisesti.
+## x) Artikkelien tiivistelmät
 
 ### Install Debian on VirtualBox – Updated 2023
-
-* Artikkeli opastaa Debianin asentamisen VirtualBox-virtuaalikoneeseen.
-* Asennuksessa suositellaan käyttämään Live-tilaa, koska se on käyttäjäystävällisempi.
-* Riittävä levytila ja RAM-muisti parantavat käyttökokemusta.
+* Artikkeli opastaa Debianin asentamisen VirtualBox-virtuaalikoneeseen painottaen helppokäyttöisyyttä.
+* Karvinen (2023) suosittelee asennuksen aloittamista **Live-tilasta**, sillä se on graafisesti selkeämpi ja helpompi aloittelijalle.
+* Suorituskyvyn varmistamiseksi on tärkeää antaa koneelle riittävästi RAM-muistia ja levytilaa.
 
 ### Debian Live -levykuva
+* Debian Live -ISO mahdollistaa järjestelmän kokeilemisen ilman asennusta suoraan RAM-muistista.
+* Live-tilasta käynnistetty "Calamares"-asennusohjelma on usein varmatoimisempi kuin perinteinen tekstipohjainen asennin (Debian Project).
 
-* Debian Live -ISO mahdollistaa järjestelmän kokeilemisen ennen asennusta.
-* Live-tilasta tehty asennus tuottaa usein paremman lopputuloksen kuin perinteinen installer.
-
-(Lähteet: Tero Karvinen 2023, Debian Project)
+### Johanna 2025: Install Debian 13 Trixie
+* Artikkelissa näytetään uuden Debian 13 "Trixie" -version asennusvaiheet.
 
 ---
+
 
 ## a) Asenna Linux virtuaalikoneeseen
 
 ### Ympäristö
 
 * **Host OS:** Windows 11 64-bit
-* **Tietokone:** Kannettava, Intel i5 -prosessori, 16 GB RAM
-* **VirtualBox:** versio 7.x
-* **ISO-tiedosto:** debian-live-12.6.0-amd64-xfce.iso
+* **ISO-tiedosto:** debian-live-13.0.0-amd64-xfce.iso
+* **Keskusmuisti (RAM):** 16 GB
+* **Virtualisointiohjelmisto:** VirtualBox 7.1.x
 
 ### Virtuaalikoneen luonti
-
-* Uusi virtuaalikone luotiin VirtualBoxissa.
-* **Nimi:** Debian12
-* **Tyyppi:** Linux
-* **Versio:** Debian (64-bit)
-* **Muisti:** 4096 MB
+Loin uuden virtuaalikoneen seuraavin parametrein:
+* **Nimi:** Debian13-Heidi
+* **Tyyppi/Versio:** Linux / Debian (64-bit)
+* **Muisti:** 4096 MB (4 GB)
 * **Prosessorit:** 2 ydintä
-* **Levytila:** 40 GB (VDI, dynaamisesti allokoitu)
+* **Levytila:** 40 GB (VDI, dynaamisesti varattu)
+* **Näytönohjain:** VMSVGA, 128 MB muistia
 
 ### Asennusprosessi
+* **10:00** – Käynnistys: Liitin ISO-tiedoston virtuaaliseen CD-asemaan ja käynnistin koneen.
+* **10:10** – Live Desktop: Valitsin käynnistysvalikosta *Live System*. Työpöytä latautui nopeasti. Testasin verkon toimivuuden.
+* **10:20** – Asennus: Klikkasin työpöydältä "Install Debian" -kuvaketta.
+* **10:35** – Konfigurointi: Valitsin kieleksi English (asennusohjelma) ja näppäimistöksi Finnish.
+* **10:50** – Osiointi: Valitsin "Tyhjennä levy" (Erase disk). Ohjelma loi osiot automaattisesti.
+* **11:00** – Käyttäjä: Luotiin käyttäjätunnus ja asetettiin salasana.
+* **11:15** – Viimeistely: Asennus valmistui, poistin ISO-tiedoston ja käynnistin koneen uudelleen.
 
-1. Virtuaalikone käynnistettiin ISO-tiedostosta.
-2. Boot-valikosta valittiin **Live Desktop**.
-3. Live-työpöydältä käynnistettiin asennusohjelma.
-4. Valittiin kieli (suomi), näppäimistö (suomalainen) ja aikavyöhyke.
-5. Levyosiointi tehtiin automaattisesti.
-6. Luotiin käyttäjä ja salasana.
-7. Asennus suoritettiin loppuun ja virtuaalikone käynnistettiin uudelleen.
+> **Huomio:** Asennus sujui ongelmitta. Huomasin, että 2 prosessoriydintä teki järjestelmästä huomattavasti nopeamman verrattuna oletusarvoiseen yhteen ytimeen.
+
+
 
 ### Lopputulos
 
 * Debian käynnistyi onnistuneesti.
 * XFCE-työpöytäympäristö toimi ilman ongelmia.
 
-*(Lisää tähän ruutukaappaukset: VM-asetukset, asennusvaihe, valmis työpöytä)*
 
 ---
 
 ## k) Vapaaehtoinen bonus: suosikkiohjelmani Linuxilla
 
-### Firefox-selain
+**Ohjelma:** GIMP (Image Manipulation Program)  
+**Miksi tämä on suosikkini?** GIMP on ammattitason kuvankäsittelyohjelma, joka on täysin ilmainen. Se on kevyt ja sisältää valtavasti työkaluja muokkaamiseen.
 
-* Firefox on valmiiksi asennettu Debianissa.
-* Avasin selaimen ja kävin Debianin virallisilla verkkosivuilla.
-* Selain toimi sujuvasti ja tukee päivittäistä käyttöä.
+**Toimenpiteen suorittaminen:**
+1. **Asennus:** Avasin päätteen (Terminal). Päivitin paketit ja asensin ohjelman komennolla:
+   ```bash
+   sudo apt update
+   sudo apt install gimp -y
+    ```
+Käyttö: Avasin ohjelman kirjoittamalla päätteeseen gimp.
+
+Toimenpide: Otin kuvakaappauksen asennusraportistani, avasin sen GIMPissä, lisäsin siihen tekstikerroksen "Heidin Debian 13" ja tallensin kuvan.
+
 
 ---
 
