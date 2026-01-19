@@ -53,7 +53,7 @@ Loin uuden virtuaalikoneen seuraavin parametrein:
 
 > **Huomio:** Asennus sujui ongelmitta. Huomasin, että 2 prosessoriydintä teki järjestelmästä huomattavasti nopeamman verrattuna oletusarvoiseen yhteen ytimeen.
 
-
+Näyttökuva 2026-01-19 115133.png
 
 ### Lopputulos
 
